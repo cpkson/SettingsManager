@@ -28,7 +28,7 @@ import uk.co.parknet.httpConnect.HttpConnector;
  */
 public class SettingsManager
 {
-	private static final Logger LOGGER = LogManager.getLogger("co.uk.travelplaces");
+	private static final Logger LOGGER = LogManager.getLogger("uk.co.parknet");
 	private static final String SETTINGSFILE = "/settings.properties";
 	private String propertiesFile;
 	private FileInputStream is;
