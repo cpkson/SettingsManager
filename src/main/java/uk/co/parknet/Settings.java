@@ -1,4 +1,4 @@
-package uk.co.travelplaces;
+package uk.co.parknet;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package uk.co.travelplaces;
+package uk.co.parknet;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,8 +12,8 @@ import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import uk.co.parknet.exception.ResponseException;
 import uk.co.parknet.httpConnect.HttpConnector;
-import uk.co.travelplaces.exception.ResponseException;
 
 /**
  * Properties Manager class is designed
