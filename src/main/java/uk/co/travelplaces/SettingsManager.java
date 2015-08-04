@@ -29,6 +29,7 @@ import uk.co.travelplaces.exception.ResponseException;
 public class SettingsManager
 {
 	private static final Logger LOGGER = LogManager.getLogger("co.uk.travelplaces");
+	private static final String SETTINGSFILE = "/Settings.properties";
 	private String propertiesFile;
 	private FileInputStream is;
 	private Properties props;
@@ -43,7 +44,7 @@ public class SettingsManager
 	 */
 	public SettingsManager()
 	{
-		this("");
+		this(SettingsManager.SETTINGSFILE);
 	}
 	
 	/**
@@ -109,7 +110,7 @@ public class SettingsManager
 				{
 					LOGGER.error(e.getMessage());
 				} 
-				catch (uk.co.travelplaces.exception.ResponseException e) 
+				catch (ResponseException e) 
 				{
 					LOGGER.error(e.getMessage());
 				}
