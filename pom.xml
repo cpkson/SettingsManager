@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>uk.co.travelplaces</groupId>
   <artifactId>SettingsManager</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>Settings_Manager</name>
   <description>Retrieve an applications settings from the settings server</description>
   
