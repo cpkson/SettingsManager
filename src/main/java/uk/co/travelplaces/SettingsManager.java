@@ -29,7 +29,7 @@ import uk.co.travelplaces.exception.ResponseException;
 public class SettingsManager
 {
 	private static final Logger LOGGER = LogManager.getLogger("co.uk.travelplaces");
-	private static final String SETTINGSFILE = "/Settings.properties";
+	private static final String SETTINGSFILE = "/settings.properties";
 	private String propertiesFile;
 	private FileInputStream is;
 	private Properties props;
@@ -38,11 +38,12 @@ public class SettingsManager
 	private String settings_db = "";
 	private String application_name = "";
 	private String settings_view = "";
+	private static SettingsManager instance = null;
 	
 	/**
 	 * Constructor
 	 */
-	public SettingsManager()
+	private SettingsManager()
 	{
 		this(SettingsManager.SETTINGSFILE);
 	}
@@ -51,12 +52,26 @@ public class SettingsManager
 	 * load initial settings from properties file
 	 * @param propertiesFile file to Settings server settings from
 	 */
-	public SettingsManager(String propertiesFile)
+	private SettingsManager(String propertiesFile)
 	{
-		setSettings(new Settings());
+		setSettings(Settings.getInstance());
 		setPropertiesFile(propertiesFile);
 		loadProperties(getPropertiesFile());
 		retrieveSettingsFromServer();
+	}
+	
+	/**
+	 * 
+	 * @return Settings Manager
+	 */
+	public static SettingsManager getInstance()
+	{
+		if(instance == null)
+		{
+			instance = new SettingsManager();
+		}
+		
+		return instance;
 	}
 	
 	/**

@@ -8,14 +8,15 @@ import java.util.HashMap;
  * @version 0.1
  * @since 3/8/2015
  */
-public class Settings 
+public final class Settings 
 {
+	private static Settings instance = null;
 	private HashMap<String,String> settings;
 	
 	/**
 	 * 
 	 */
-	public Settings()
+	private Settings()
 	{
 		this.settings = new HashMap<String,String>();
 	}
@@ -38,5 +39,18 @@ public class Settings
 	public String getSetting(String key)
 	{
 		return this.settings.get(key);
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static Settings getInstance()
+	{
+		if(instance == null)
+		{
+			instance = new Settings();
+		}
+		return instance;
 	}
 }
